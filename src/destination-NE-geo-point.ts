@@ -3,6 +3,7 @@ import {EarthRadiusInKm} from './constant';
 
 /**
  * Координаты конечной точки (в географических координатах).
+ * https://www.movable-type.co.uk/scripts/latlong.html#dest-point
  *
  * @param startLon - долгота начально точки
  * @param startLat - широта начально точки
