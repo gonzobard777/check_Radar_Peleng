@@ -1,0 +1,38 @@
+{
+  "name": "check_radar_peleng",
+  "description": "Everything related to mathematics",
+  "version": "1.0.0",
+  "exports": "./dist/cjs/index.js",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/types/*"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "@do-while-for-each/tsconfig": "1.x.x",
+    "@do-while-for-each/test": "1.x.x",
+    "@do-while-for-each/math": "2.x.x"
+  },
+  "scripts": {
+    "clean": "gmFs cleanDir . --fileNames=\"dist;node_modules;package-lock.json\"",
+    "bootstrap": "npm run clean && npm install",
+    "build": "gmFs rmForce dist --noConfirm && tsc -b src/tsconfig.json",
+    "test": "jest --config=src/__tests__/jest.config.js",
+    "version": "npm run build && npm run test",
+    "postversion": "git push",
+    "deploy": "npm version patch && npm publish",
+    "tgz": "npm run build && npm pack"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
