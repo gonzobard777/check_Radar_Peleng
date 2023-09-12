@@ -25,6 +25,10 @@ export function destinationNEPlanePoint(bearingDeg: number, dist: number) {
     yMult = -1;
   }
 
+  if (bearingDeg === 0){
+    yMult = -1;
+  }
+
   return [
     Math.sin(angle) * dist * xMult,
     Math.cos(angle) * dist * yMult,
